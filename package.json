@@ -1,0 +1,23 @@
+{
+  "name": "mfe-with-react",
+  "version": "1.0.0",
+  "description": "Getting started with micro front-end using react and webpack module federation",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/host"
+    ]
+  },
+  "scripts": {
+    "start": "npm --ws start",
+    "start:host": "npm start --workspace=host",
+    "cleanup": "npm --ws run cleanup"
+  },
+  "keywords": [
+    "mfe",
+    "react",
+    "webpack"
+  ],
+  "author": "willytjandra",
+  "license": "ISC"
+}
