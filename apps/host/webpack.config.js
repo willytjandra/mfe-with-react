@@ -1,5 +1,8 @@
 const path = require('path')
 const HtmlWebpacPlugin = require('html-webpack-plugin')
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+
+const { dependencies } = require('../../package.json')
 
 module.exports = {
   entry: './src/index.ts',
@@ -12,6 +15,23 @@ module.exports = {
     new HtmlWebpacPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
       inject: 'body',
+    }),
+    new ModuleFederationPlugin({
+      name: 'Host',
+      remotes: {
+        MFE1: 'MFE1@http://localhost:3001/remoteEntry.js',
+      },
+      shared: {
+        ...dependencies,
+        react: {
+          singleton: true,
+          requiredVersion: dependencies.react,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-dom'],
+        },
+      },
     }),
   ],
   devServer: {
