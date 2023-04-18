@@ -1,0 +1,17 @@
+{
+  "name": "mfe1",
+  "version": "1.0.0",
+  "description": "Remote App #1 for micro front-end",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mfe",
+    "react",
+    "webpack"
+  ],
+  "author": "willytjandra",
+  "license": "ISC"
+}

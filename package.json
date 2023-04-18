@@ -5,12 +5,14 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "apps/host"
+      "apps/host",
+      "apps/mfe1"
     ]
   },
   "scripts": {
     "start": "npm --ws start",
     "start:host": "npm start --workspace=host",
+    "start:mfe1": "npm start --workspace=mfe1",
     "cleanup": "rm -rf node_modules"
   },
   "keywords": [
