@@ -17,10 +17,10 @@ module.exports = {
       inject: 'body',
     }),
     new ModuleFederationPlugin({
-      name: 'Host',
-      remotes: {
-        MFE1: 'MFE1@http://localhost:3001/remoteEntry.js',
-        TICTACTOE: 'TICTACTOE@http://localhost:3002/remoteEntry.js',
+      name: 'TICTACTOE',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './App': './src/App',
       },
       shared: {
         ...dependencies,
@@ -36,7 +36,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3002,
     static: {
       directory: path.join(__dirname, 'dist'),
     },

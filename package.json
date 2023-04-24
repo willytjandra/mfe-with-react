@@ -6,13 +6,15 @@
   "workspaces": {
     "packages": [
       "apps/host",
-      "apps/mfe1"
+      "apps/mfe1",
+      "apps/tic-tac-toe"
     ]
   },
   "scripts": {
-    "start": "npm run start:host & npm run start:mfe1",
+    "start": "npm run start:host & npm run start:mfe1 & npm run start:tic-tac-toe",
     "start:host": "npm start --workspace=host",
     "start:mfe1": "npm start --workspace=mfe1",
+    "start:tic-tac-toe": "npm start --workspace=tic-tac-toe",
     "cleanup": "rm -rf node_modules"
   },
   "keywords": [
