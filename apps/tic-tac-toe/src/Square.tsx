@@ -1,25 +1,13 @@
 import styles from './Square.module.css'
 
 interface SquareProps {
-  value: string
+  value: string | null
+  onSquareClicked: () => void
 }
-
-// const Square: React.FC<SquareProps> = ({ value }: SquareProps) => (
-//   <button className={styles.square} onClick={handleClick}>
-//     {value}
-//   </button>
-// )
-
-const Square: React.FC<SquareProps> = ({ value }: SquareProps) => {
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-    console.log(`clicked ${value}!`)
-  }
-
-  return (
-    <button className={styles.square} onClick={handleClick}>
-      {value}
-    </button>
-  )
-}
+const Square: React.FC<SquareProps> = ({ value, onSquareClicked }: SquareProps) => (
+  <button className={styles.square} onClick={onSquareClicked}>
+    {value}
+  </button>
+)
 
 export default Square
