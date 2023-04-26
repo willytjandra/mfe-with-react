@@ -1,3 +1,5 @@
-const App: React.FC = () => <h1>Hello from Tic-Tac-Toe</h1>
+import Board from './Board'
+
+const App: React.FC = () => <Board />
 
 export default App

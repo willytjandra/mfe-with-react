@@ -10,6 +10,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   plugins: [
     new HtmlWebpacPlugin({
@@ -47,6 +48,10 @@ module.exports = {
         test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
